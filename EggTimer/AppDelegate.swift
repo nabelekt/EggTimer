@@ -11,10 +11,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        enableMenus(start: true, stop: false, reset: false)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -26,5 +24,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBOutlet weak var stopTImerMenuItem: NSMenuItem!
     
     @IBOutlet weak var resetTimerMenuItem: NSMenuItem!
+    
+    func enableMenus(start: Bool, stop: Bool, reset: Bool) {
+        startTimerMenuItem.isEnabled = start
+        stopTImerMenuItem.isEnabled = stop
+        resetTimerMenuItem.isEnabled = reset
+    }
+
 }
 
