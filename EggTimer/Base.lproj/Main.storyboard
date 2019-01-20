@@ -261,7 +261,7 @@ Gw
                             </button>
                             <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S7e-xp-6w8">
                                 <rect key="frame" x="18" y="76" width="380" height="24"/>
-                                <sliderCell key="cell" enabled="NO" state="on" alignment="left" minValue="1" maxValue="25" doubleValue="6" tickMarkPosition="above" numberOfTickMarks="25" sliderType="linear" id="Ijx-HD-fD1"/>
+                                <sliderCell key="cell" continuous="YES" enabled="NO" state="on" alignment="left" maxValue="25" doubleValue="6" tickMarkPosition="above" numberOfTickMarks="26" allowsTickMarkValuesOnly="YES" sliderType="linear" id="Ijx-HD-fD1"/>
                                 <connections>
                                     <action selector="sliderValueChanged:" target="AAl-Mg-Vd1" id="GUw-lJ-UwN"/>
                                 </connections>

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EggTimer/View Controllers/ViewController.swift"
-            timestampString = "569655042.392233"
+            timestampString = "569714780.869218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "timeRemainingOnTimer(_:timeRemaining:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EggTimer/View Controllers/ViewController.swift"
-            timestampString = "569655042.392626"
+            timestampString = "569714780.869316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "updateDisplay(for:)"
             landmarkType = "7">
          </BreakpointContent>

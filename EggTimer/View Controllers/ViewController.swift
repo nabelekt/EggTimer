@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import AVFoundation
 
 class ViewController: NSViewController {
     
@@ -17,6 +18,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var resetButton: NSButton!
     var eggTimer = EggTimer()
     var prefs = Preferenecs()
+    var soundPlayer: AVAudioPlayer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,7 @@ class ViewController: NSViewController {
             eggTimer.startTimer()
         }
         configureButtonsAndMenus()
+        prepareSound() // Find and buffer "ding" sound
     }
     
     @IBAction func stopButtonClicked(_ sender: Any) {
@@ -66,6 +69,7 @@ class ViewController: NSViewController {
 }
 
 extension ViewController {
+// Make use of user preferences
     
     func setupPrefs() {
         updateDisplay(for: prefs.selectedTime)
@@ -109,10 +113,12 @@ extension ViewController: EggTimerProtocol {
     
     func timerHasFinished(_ timer: EggTimer) {
         updateDisplay(for: 0)
+        playSound()
     }
 }
 
 extension ViewController {
+// Handle display
     
     func updateDisplay(for timeRemaining: TimeInterval) {
         timeRemainingField.stringValue = textToDisplay(for: timeRemaining)
@@ -184,5 +190,27 @@ extension ViewController {
         if let appDel = NSApplication.shared.delegate as? AppDelegate {
             appDel.enableMenus(start: enableStart, stop: enableStop, reset:enableReset)
         }
+    }
+}
+
+extension ViewController {
+// Handle sound
+    
+    func prepareSound() {
+        guard let audioFileUrl = Bundle.main.url(forResource: "ding", withExtension: "mp3")
+        else {
+            return
+        }
+        
+        do {
+            soundPlayer = try AVAudioPlayer(contentsOf: audioFileUrl)
+            soundPlayer?.prepareToPlay()
+        } catch {
+            print("Sound player not available: \(error)")
+        }
+    }
+    
+    func playSound() {
+        soundPlayer?.play()
     }
 }

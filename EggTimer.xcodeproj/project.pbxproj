@@ -13,6 +13,7 @@
 		E925E54B21B479F7009469B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E925E54921B479F7009469B6 /* Main.storyboard */; };
 		E925E55421B4F6BA009469B6 /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925E55321B4F6BA009469B6 /* PrefsViewController.swift */; };
 		E99194ED21F424560036D13F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99194EC21F424560036D13F /* Preferences.swift */; };
+		E99A45D821F521E800E16631 /* ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E99A45D721F521E800E16631 /* ding.mp3 */; };
 		E9FEDD1021C08EFA0093D146 /* EggTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FEDD0F21C08EFA0093D146 /* EggTimer.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		E925E54D21B479F7009469B6 /* EggTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EggTimer.entitlements; sourceTree = "<group>"; };
 		E925E55321B4F6BA009469B6 /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
 		E99194EC21F424560036D13F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		E99A45D721F521E800E16631 /* ding.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ding.mp3; sourceTree = "<group>"; };
 		E9FEDD0F21C08EFA0093D146 /* EggTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +66,7 @@
 				E9FEDD0C21C08DEE0093D146 /* Model */,
 				E925E54721B479F7009469B6 /* Assets.xcassets */,
 				E925E54921B479F7009469B6 /* Main.storyboard */,
+				E99A45D721F521E800E16631 /* ding.mp3 */,
 				E925E54C21B479F7009469B6 /* Info.plist */,
 				E9FEDD0E21C08E1B0093D146 /* Supporting Files */,
 			);
@@ -156,6 +159,7 @@
 			files = (
 				E925E54821B479F7009469B6 /* Assets.xcassets in Resources */,
 				E925E54B21B479F7009469B6 /* Main.storyboard in Resources */,
+				E99A45D821F521E800E16631 /* ding.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
