@@ -16,11 +16,13 @@ class ViewController: NSViewController {
     @IBOutlet weak var stopButton: NSButton!
     @IBOutlet weak var resetButton: NSButton!
     var eggTimer = EggTimer()
+    var prefs = Preferenecs()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         eggTimer.delegate = self
+        setupPrefs()
     }
 
     override var representedObject: Any? {
@@ -33,7 +35,7 @@ class ViewController: NSViewController {
         if eggTimer.isPaused {
             eggTimer.resetTimer()
         } else {
-            eggTimer.duration = 360
+            eggTimer.duration = prefs.selectedTime
             eggTimer.startTimer()
         }
         configureButtonsAndMenus()
@@ -46,7 +48,7 @@ class ViewController: NSViewController {
     
     @IBAction func resetButtonClicked(_ sender: Any) {
         eggTimer.resetTimer()
-        updateDisplay(for: 360)
+        updateDisplay(for: prefs.selectedTime)
         configureButtonsAndMenus()
     }
     
@@ -60,6 +62,42 @@ class ViewController: NSViewController {
     
     @IBAction func resetTimerMenuItemSelected(_ sender: Any) {
         resetButtonClicked(sender)
+    }
+}
+
+extension ViewController {
+    
+    func setupPrefs() {
+        updateDisplay(for: prefs.selectedTime)
+        
+        let notificationName = Notification.Name(rawValue: "PrefsChanged")
+        NotificationCenter.default.addObserver(forName: notificationName, object: nil, queue: nil) {
+            (notification) in
+            self.checkForResetAfterPrefsChange()
+        }
+    }
+    
+    func updateFromPrefs() {
+        self.eggTimer.duration = self.prefs.selectedTime
+        self.resetButtonClicked(self)
+    }
+    
+    func checkForResetAfterPrefsChange() {
+        if eggTimer.isStopped || eggTimer.isPaused {
+            updateFromPrefs()
+        }
+        else {
+            let alert = NSAlert()
+            alert.messageText = "Reset timer with new settings?"
+            alert.informativeText = "This will stop your current timer!"
+            alert.alertStyle = .warning
+            alert.addButton(withTitle: "Reset")
+            alert.addButton(withTitle: "Cancel")
+            let response = alert.runModal()
+            if response == NSApplication.ModalResponse.alertFirstButtonReturn {
+                self.updateFromPrefs()
+            }
+        }
     }
 }
 
@@ -96,7 +134,7 @@ extension ViewController {
     }
     
     private func imageToDisplay(for timeRemaining: TimeInterval) -> NSImage? {
-        let percentageComplete = 100 - (timeRemaining / 360 * 100)
+        let percentageComplete = 100 - (timeRemaining / prefs.selectedTime * 100)
 
         if eggTimer.isStopped {
             let stoppedImageName = (timeRemaining == 0) ? "100" : "stopped"

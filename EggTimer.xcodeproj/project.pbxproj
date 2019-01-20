@@ -12,6 +12,7 @@
 		E925E54821B479F7009469B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E925E54721B479F7009469B6 /* Assets.xcassets */; };
 		E925E54B21B479F7009469B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E925E54921B479F7009469B6 /* Main.storyboard */; };
 		E925E55421B4F6BA009469B6 /* PrefsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E925E55321B4F6BA009469B6 /* PrefsViewController.swift */; };
+		E99194ED21F424560036D13F /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99194EC21F424560036D13F /* Preferences.swift */; };
 		E9FEDD1021C08EFA0093D146 /* EggTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FEDD0F21C08EFA0093D146 /* EggTimer.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		E925E54C21B479F7009469B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E925E54D21B479F7009469B6 /* EggTimer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EggTimer.entitlements; sourceTree = "<group>"; };
 		E925E55321B4F6BA009469B6 /* PrefsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsViewController.swift; sourceTree = "<group>"; };
+		E99194EC21F424560036D13F /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		E9FEDD0F21C08EFA0093D146 /* EggTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				E9FEDD0F21C08EFA0093D146 /* EggTimer.swift */,
+				E99194EC21F424560036D13F /* Preferences.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			files = (
 				E925E54621B479F6009469B6 /* ViewController.swift in Sources */,
 				E9FEDD1021C08EFA0093D146 /* EggTimer.swift in Sources */,
+				E99194ED21F424560036D13F /* Preferences.swift in Sources */,
 				E925E55421B4F6BA009469B6 /* PrefsViewController.swift in Sources */,
 				E925E54421B479F6009469B6 /* AppDelegate.swift in Sources */,
 			);
